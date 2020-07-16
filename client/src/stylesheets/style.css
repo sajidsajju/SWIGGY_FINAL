@@ -1,0 +1,19 @@
+.error {
+  color: #d8000c;
+}
+.map {
+  height: 100vh;
+}
+.gridsNav{
+  cursor: pointer
+}
+.typo{
+  background-color: #FFFFFF;
+}
+.typo:hover{
+  background-color: #e3e3e3;
+}
+.deleteBtn{
+  border: 0px;
+  color: black
+}
