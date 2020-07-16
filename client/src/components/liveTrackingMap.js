@@ -90,7 +90,7 @@ function LiveTrackingMaps() {
     };
 
     axios
-      .get("api/allLocations", config)
+      .get("/api/allLocations", config)
       .then((res) => {
         if (res.data.success) {
           dispatch(finalLocations(res.data.message));
@@ -108,7 +108,7 @@ function LiveTrackingMaps() {
       },
     };
     axios
-      .get("api/allLocations", config)
+      .get("/api/allLocations", config)
       .then((res) => {
         if (res.data.success) {
           dispatch(finalLocations(res.data.message));

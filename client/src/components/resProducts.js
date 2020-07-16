@@ -213,7 +213,7 @@ export default function RestProducts() {
 
     const fetchData = async () => {
       await axios
-        .get("api/items/", config)
+        .get("/api/items/", config)
         .then((res) => {
           if (res.data.success) {
             setGetDetails(res.data.message);
@@ -232,7 +232,7 @@ export default function RestProducts() {
 
     const fetchMapData = async () => {
       await axios
-        .get("api/location/", config)
+        .get("/api/location/", config)
         .then((res) => {
 
           if (!res.data.success) {
@@ -245,7 +245,7 @@ export default function RestProducts() {
 
     const getAllOrders = async () => {
       await axios
-        .get("api/getAllOrders/", config)
+        .get("/api/getAllOrders/", config)
         .then((res) => {
 
           if (res.data.success) {
@@ -258,7 +258,7 @@ export default function RestProducts() {
 
     const fetchAddressData = async () => {
       await axios
-        .get("api/restaurantAddress/", config)
+        .get("/api/restaurantAddress/", config)
         .then((res) => {
 
           if (!res.data.success) {
@@ -280,7 +280,7 @@ export default function RestProducts() {
     };
 
     await axios
-      .get("api/items/", config)
+      .get("/api/items/", config)
       .then((res) => {
         if (res.data.success) {
           setGetDetails(res.data.message);
@@ -305,7 +305,7 @@ export default function RestProducts() {
       },
     };
     await axios
-      .get("api/getAllOrders/", config)
+      .get("/api/getAllOrders/", config)
       .then((res) => {
 
         if (res.data.success) {
@@ -327,7 +327,7 @@ export default function RestProducts() {
       },
     };
     axios
-      .delete(`api/items/${deleteID}`, config)
+      .delete(`/api/items/${deleteID}`, config)
       .then((res) => {
         if (res.data.success) {
           setDeleteItem(res.data.message);
@@ -353,7 +353,7 @@ export default function RestProducts() {
       },
     };
     axios
-      .get(`api/changeOrderStatus/${itemID}`, config)
+      .get(`/api/changeOrderStatus/${itemID}`, config)
       .then((res) => {
         if (res.data.success) {
           setDeliverOrderAlert(true);
@@ -374,7 +374,7 @@ export default function RestProducts() {
       },
     };
     axios
-      .get(`api/cancelOrder/${itemID}`, config)
+      .get(`/api/cancelOrder/${itemID}`, config)
       .then((res) => {
         if (res.data.success) {
           setCancelOrderAlert(true);
@@ -504,7 +504,7 @@ export default function RestProducts() {
 
                     axios
                       .post(
-                        "api/items/",
+                        "/api/items/",
                         formData,
                         config
                       )
@@ -760,7 +760,7 @@ export default function RestProducts() {
                       <StyledTableRow key={row._id}>
                         <StyledTableCell component="th" scope="row">
                           <div style={{ width: 50, height: 50 }}>
-                            <Image alt={row.itemName} src={`uploads/${row.itemImage}`}></Image>
+                            <Image alt={row.itemName} src={`/uploads/${row.itemImage}`}></Image>
                           </div>
                         </StyledTableCell>
                         <StyledTableCell align="right">{row.itemName}</StyledTableCell>

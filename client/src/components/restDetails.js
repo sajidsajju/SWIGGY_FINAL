@@ -118,7 +118,7 @@ export default function RestDetails() {
     };
     const fetchData = async () => {
       await axios
-        .get("api/restaurantAddress/", config)
+        .get("/api/restaurantAddress/", config)
         .then((res) => {
           if (res.data.success) {
             setGetDetails(res.data.message);
@@ -199,7 +199,7 @@ export default function RestDetails() {
 
             axios
               .post(
-                "api/restaurantAddress/",
+                "/api/restaurantAddress/",
                 formData,
                 config
               )
@@ -288,7 +288,7 @@ export default function RestDetails() {
                     <br />
                     <br />
 
-                    <Avatar src={image ? image : getDetails.profileImage ? `uploads/${getDetails.profileImage}` : ""} />
+                    <Avatar src={image ? image : getDetails.profileImage ? `/uploads/${getDetails.profileImage}` : ""} />
                   </div>
                   <div>
                     {imageError ? (

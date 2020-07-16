@@ -152,7 +152,7 @@ export default function UserCart({ match }) {
         total: grandTotal,
         allLocations: allLocations,
       };
-      axios.post(`api/orderedHistory/${nearestDelUser[0].did}`, details, config)
+      axios.post(`/api/orderedHistory/${nearestDelUser[0].did}`, details, config)
         .then((res) => {
           setBtnDisable(false);
           setMap(true);
@@ -190,7 +190,7 @@ export default function UserCart({ match }) {
       },
     };
     axios
-      .get("api/cart/", config)
+      .get("/api/cart/", config)
       .then((res) => {
         if (res.data.success) {
           dispatch(countItems(res.data.message));
@@ -199,7 +199,7 @@ export default function UserCart({ match }) {
       .catch((err) => console.log(err));
 
     axios
-      .get("api/getOrders/", config)
+      .get("/api/getOrders/", config)
       .then((res) => {
         if (res.data.success) {
           setMultipleOrders(res.data.message);
@@ -209,7 +209,7 @@ export default function UserCart({ match }) {
 
 
     axios
-      .get(`api/restLocation/`, config)
+      .get(`/api/restLocation/`, config)
       .then((res) => {
         if (res.data.success) {
           setRestLocation(res.data.message);
@@ -218,7 +218,7 @@ export default function UserCart({ match }) {
       .catch((err) => console.log(err));
 
     axios
-      .get(`api/userLocation/`, config)
+      .get(`/api/userLocation/`, config)
       .then((res) => {
         if (res.data.success) {
           setUserLocation(res.data.message);
@@ -227,7 +227,7 @@ export default function UserCart({ match }) {
       .catch((err) => console.log(err));
 
     axios
-      .get("api/delLocation/", config)
+      .get("/api/delLocation/", config)
       .then((res) => {
         if (res.data.success) {
           let data = [];

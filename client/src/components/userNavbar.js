@@ -125,7 +125,7 @@ useEffect(() => {
          "Authorization": "Bearer "+ localStorage.getItem("user-token"),
        }
      }
-    axios.get("api/image/",
+    axios.get("/api/image/",
     config)
     .then((res) => {
       if (res.data.success) {
@@ -137,7 +137,7 @@ useEffect(() => {
   })
   .catch((err) => console.log(err))
 
-  axios.get("api/getOrders", config)
+  axios.get("/api/getOrders", config)
   .then((res) => {
     if (res.data.success) {
      setCompleted(res.data.message);
@@ -207,7 +207,7 @@ const myOrders = () => {
           color="inherit"
         >
           <Avatar
-            alt={getDetails.restaurantName} src={getDetails.status ? `uploads/${getDetails.data}` : ""}
+            alt={getDetails.restaurantName} src={getDetails.status ? `/uploads/${getDetails.data}` : ""}
           />
         </IconButton>
         <p>Profile</p>
@@ -282,7 +282,7 @@ const myOrders = () => {
                 color="inherit"
               >
                 <Avatar
-            alt={getDetails.restaurantName} src={getDetails.status ? `uploads/${getDetails.data}` : ""}
+            alt={getDetails.restaurantName} src={getDetails.status ? `/uploads/${getDetails.data}` : ""}
           />
               </IconButton>
             </div>

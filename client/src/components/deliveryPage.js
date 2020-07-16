@@ -135,7 +135,7 @@ export default function DeliveryPage() {
 
     const fetchAddressData = async () => {
       await axios
-        .get("api/deliveryAddress/", config)
+        .get("/api/deliveryAddress/", config)
         .then((res) => {
           if (!res.data.success) {
             setAddressPage(true);
@@ -147,7 +147,7 @@ export default function DeliveryPage() {
 
     const fetchMapData = async () => {
       await axios
-        .get("api/location/", config)
+        .get("/api/location/", config)
         .then((res) => {
 
           if (!res.data.success) {
@@ -160,7 +160,7 @@ export default function DeliveryPage() {
 
     const getAllOrders = async () => {
       await axios
-        .get("api/getAllOrders/", config)
+        .get("/api/getAllOrders/", config)
         .then((res) => {
 
           if (res.data.success) {
@@ -184,7 +184,7 @@ export default function DeliveryPage() {
       },
     };
     await axios
-      .get("api/getAllOrders/", config)
+      .get("/api/getAllOrders/", config)
       .then((res) => {
 
         if (res.data.success) {
@@ -204,7 +204,7 @@ export default function DeliveryPage() {
       },
     };
     axios
-      .get(`api/finalDelivery/${itemID}`, config)
+      .get(`/api/finalDelivery/${itemID}`, config)
       .then((res) => {
         if (res.data.success) {
           setDeliverOrderAlert(true);

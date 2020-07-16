@@ -110,7 +110,7 @@ export default function RestRegister() {
         };
 
         axios
-          .post("api/register/", Details)
+          .post("/api/register/", Details)
           .then((res) => {
             if (!res.data.success) {
               setRegisterSuccess("");

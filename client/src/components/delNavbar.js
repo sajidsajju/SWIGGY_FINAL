@@ -121,7 +121,7 @@ export default function Navbar({ link, authToken, loggedOut, disabling, homeDisa
         "Authorization": "Bearer " + localStorage.getItem("del-token"),
       }
     }
-    axios.get("api/image/",
+    axios.get("/api/image/",
       config)
       .then((res) => {
         if (res.data.success) {
@@ -132,7 +132,7 @@ export default function Navbar({ link, authToken, loggedOut, disabling, homeDisa
       })
       .catch((err) => console.log(err))
 
-    axios.get("api/getOrders", config)
+    axios.get("/api/getOrders", config)
       .then((res) => {
         if (res.data.success) {
           setCompleted(res.data.message);
@@ -197,7 +197,7 @@ export default function Navbar({ link, authToken, loggedOut, disabling, homeDisa
           color="inherit"
         >
           <Avatar
-            alt={getDetails.restaurantName} src={getDetails ? `uploads/${getDetails}` : ""}
+            alt={getDetails.restaurantName} src={getDetails ? `/uploads/${getDetails}` : ""}
           />
         </IconButton>
         <p>Profile</p>
@@ -265,7 +265,7 @@ export default function Navbar({ link, authToken, loggedOut, disabling, homeDisa
                 color="inherit"
               >
                 <Avatar
-                  alt={getDetails.restaurantName} src={getDetails ? `uploads/${getDetails}` : ""}
+                  alt={getDetails.restaurantName} src={getDetails ? `/uploads/${getDetails}` : ""}
                 />
               </IconButton>
             </div>

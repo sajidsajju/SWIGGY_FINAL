@@ -123,7 +123,7 @@ export default function UserPageItems({ match }) {
     };
     if (checked) {
       axios
-        .get("api/restaurants/" + match.params.id, config)
+        .get("/api/restaurants/" + match.params.id, config)
         .then((res) => {
 
           if (res.data.success) {
@@ -137,7 +137,7 @@ export default function UserPageItems({ match }) {
     }
     else {
       axios
-        .get("api/restaurants/" + match.params.id, config)
+        .get("/api/restaurants/" + match.params.id, config)
         .then((res) => {
 
           if (res.data.success) {
@@ -170,7 +170,7 @@ export default function UserPageItems({ match }) {
     };
 
     axios
-      .get("api/restaurants/" + match.params.id, config)
+      .get("/api/restaurants/" + match.params.id, config)
       .then((res) => {
 
         if (res.data.success) {
@@ -180,7 +180,7 @@ export default function UserPageItems({ match }) {
       .catch((err) => console.log(err));
 
     axios
-      .get("api/restaurant/" + match.params.id, config)
+      .get("/api/restaurant/" + match.params.id, config)
       .then((res) => {
 
         if (res.data.success) {
@@ -190,7 +190,7 @@ export default function UserPageItems({ match }) {
       .catch((err) => console.log(err));
 
     axios
-      .get("api/cart/", config)
+      .get("/api/cart/", config)
       .then((res) => {
         if (res.data.success) {
 
@@ -199,7 +199,7 @@ export default function UserPageItems({ match }) {
       })
       .catch((err) => console.log(err));
 
-  }, [dispatch, match.params]);
+  }, [dispatch, match.params.id]);
 
   const getCartData = () => {
 
@@ -211,7 +211,7 @@ export default function UserPageItems({ match }) {
     };
 
     axios
-      .get("api/cart/", config)
+      .get("/api/cart/", config)
       .then((res) => {
         if (res.data.success) {
           dispatch(countItems(res.data.message));
@@ -231,7 +231,7 @@ export default function UserPageItems({ match }) {
     };
 
     axios
-      .get("api/cart/" + match.params.id + "/" + iid + "/add", config)
+      .get("/api/cart/" + match.params.id + "/" + iid + "/add", config)
       .then((res) => {
         if (res.data.success) {
           getCartData();
@@ -272,7 +272,7 @@ export default function UserPageItems({ match }) {
       },
     };
     axios
-      .get("api/cart/" + match.params.id + "/" + iid + "/sub", config)
+      .get("/api/cart/" + match.params.id + "/" + iid + "/sub", config)
       .then((res) => {
         
         if (res.data.success) {
@@ -304,7 +304,7 @@ export default function UserPageItems({ match }) {
       },
     };
 
-    axios.get(`api/cart/${deleteAndUpdateCart.uid}/${deleteAndUpdateCart.id}`, config)
+    axios.get(`/api/cart/${deleteAndUpdateCart.uid}/${deleteAndUpdateCart.id}`, config)
       .then((res) => {
         if (res.data.success) {
           console.log(res.data.message)
@@ -367,7 +367,7 @@ export default function UserPageItems({ match }) {
 
                     <CardMedia
                       className={classes.media}
-                      image={restaurant.itemImage ? `uploads/${restaurant.itemImage}` : ""}
+                      image={restaurant.itemImage ? `/uploads/${restaurant.itemImage}` : ""}
 
                     />
                     {restaurant.veg ?

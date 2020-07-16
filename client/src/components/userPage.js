@@ -100,7 +100,7 @@ export default function UserPage() {
 
     const fetchData = () => {
       axios
-        .get("api/restaurants/", config)
+        .get("/api/restaurants/", config)
         .then((res) => {
           if (res.data.success) {
             setGetDetails(res.data.message);
@@ -112,7 +112,7 @@ export default function UserPage() {
 
     const fetchUser = () => {
       axios
-        .get("api/userDetails/", config)
+        .get("/api/userDetails/", config)
         .then((res) => {
 
           if (res.data.success) {
@@ -186,7 +186,7 @@ export default function UserPage() {
 
                           <CardMedia
                             className={classes.media}
-                            image={restaurant.restaurantAddress ? `uploads/${restaurant.restaurantAddress.profileImage}` : ""}
+                            image={restaurant.restaurantAddress ? `/uploads/${restaurant.restaurantAddress.profileImage}` : ""}
 
                           />
                           <CardHeader

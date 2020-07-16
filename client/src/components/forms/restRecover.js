@@ -101,7 +101,7 @@ export default function RestRecover() {
         };
 
         axios
-          .post("api/recover", loginDetails)
+          .post("/api/recover", loginDetails)
           .then((res) => {
             if (!res.data.success) {
               setRecoverSuccess("");

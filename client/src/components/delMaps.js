@@ -110,7 +110,7 @@ function Maps() {
       },
     };
     axios
-      .post(`api/location/${location[0]}/${location[1]}`, formData, config)
+      .post(`/api/location/${location[0]}/${location[1]}`, formData, config)
       .then((res) => {
 
         if (res.data.success) {

@@ -106,7 +106,7 @@ export default function ResetPassword({ match }) {
 
         axios
           .post(
-            "api/reset/" +
+            "/api/reset/" +
             match.params.type +
             "/" +
             match.params.token,

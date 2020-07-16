@@ -112,7 +112,7 @@ export default function UserDetails() {
     };
     const fetchData = async () => {
       await axios
-        .get("api/address/", config)
+        .get("/api/address/", config)
         .then((res) => {
           if (res.data.success) {
             setGetDetails(res.data.message);
@@ -121,7 +121,7 @@ export default function UserDetails() {
         .catch((err) => console.log(err));
 
       await axios
-        .get("api/image/", config)
+        .get("/api/image/", config)
         .then((res) => {
           if (res.data.success) {
             setImageDetails({data: res.data.message,
@@ -157,7 +157,7 @@ export default function UserDetails() {
       },
     };
     axios
-      .post("api/image/", formData, config)
+      .post("/api/image/", formData, config)
       .then((res) => {
         setDataError("");
         setErrorDisp("none");
@@ -208,7 +208,7 @@ export default function UserDetails() {
 
           axios
             .post(
-              "api/address/",
+              "/api/address/",
               formData,
               config
             )
@@ -298,7 +298,7 @@ export default function UserDetails() {
                     <br />
                     <br />
 
-                    <Avatar src={image ? image : imageDetails.status ? `uploads/${imageDetails.data}` : ""} />
+                    <Avatar src={image ? image : imageDetails.status ? `/uploads/${imageDetails.data}` : ""} />
                   </div>
 
                   <Grid

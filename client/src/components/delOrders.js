@@ -38,7 +38,7 @@ export default function DelOrders({ match }) {
     };
     const fetchData = async () => {
       await axios
-        .get("api/getParticularOrders/" + match.params.id, config)
+        .get("/api/getParticularOrders/" + match.params.id, config)
         .then((res) => {
           if (res.data.success) {
             setGetOrderData(res.data.message);
@@ -103,7 +103,7 @@ export default function DelOrders({ match }) {
           <Grid item xs={4} key={item._id}>
             <div style={{ margin: 20 }}>
               <div style={{ width: 80, height: 80 }}>
-                <Image disableSpinner={true} src={item.itemImage ? `uploads/${item.itemImage}` : ""} />
+                <Image disableSpinner={true} src={item.itemImage ? `/uploads/${item.itemImage}` : ""} />
               </div>
               <p>Item Name : {item.itemName}</p>
               <p>Count: {item.count}</p>

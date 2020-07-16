@@ -115,7 +115,7 @@ export default function EditRestDetails({ match }) {
     };
     const fetchData = async () => {
       await axios
-        .get("api/items/" + match.params.uid + "/" + match.params.id, config)
+        .get("/api/items/" + match.params.uid + "/" + match.params.id, config)
         .then((res) => {
           if (res.data.success) {
             setGetDetails(res.data.message);
@@ -185,7 +185,7 @@ export default function EditRestDetails({ match }) {
 
             axios
               .post(
-                "api/items/" + match.params.id,
+                "/api/items/" + match.params.id,
                 formData,
                 config
               )
@@ -282,7 +282,7 @@ export default function EditRestDetails({ match }) {
                     <div
                       style={{ width: 150, height: 150 }}
                     >
-                      <Image disableSpinner={true} src={image ? image : getDetails.itemImage ? `uploads/${getDetails.itemImage}` : ""} />
+                      <Image disableSpinner={true} src={image ? image : getDetails.itemImage ? `/uploads/${getDetails.itemImage}` : ""} />
                     </div>
 
                   </div>

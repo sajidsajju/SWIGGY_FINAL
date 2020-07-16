@@ -110,7 +110,7 @@ export default function DelLogin() {
         };
 
         axios
-          .post("api/login/", loginDetails)
+          .post("/api/login/", loginDetails)
           .then((res) => {
             if (!res.data.success) {
               setLoginError(res.data.message);

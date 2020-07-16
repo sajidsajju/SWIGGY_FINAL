@@ -187,7 +187,7 @@ export default function UserCart({ match }) {
       },
     };
     axios
-      .get("api/cart/", config)
+      .get("/api/cart/", config)
       .then((res) => {
         if (res.data.success) {
           dispatch(countItems(res.data.message));
@@ -207,7 +207,7 @@ export default function UserCart({ match }) {
     };
 
     axios
-      .get("api/cart/", config)
+      .get("/api/cart/", config)
       .then((res) => {
         if (res.data.success) {
           dispatch(countItems(res.data.message));
@@ -227,7 +227,7 @@ export default function UserCart({ match }) {
     };
 
     axios
-      .get("api/cart/" + rid + "/" + iid + "/add", config)
+      .get("/api/cart/" + rid + "/" + iid + "/add", config)
       .then((res) => {
         if (res.data.success) {
           getCartData();
@@ -267,7 +267,7 @@ export default function UserCart({ match }) {
       },
     };
     axios
-      .get("api/cart/" + rid + "/" + iid + "/sub", config)
+      .get("/api/cart/" + rid + "/" + iid + "/sub", config)
       .then((res) => {
         console.log(res.data)
         if (res.data.success) {
@@ -299,7 +299,7 @@ export default function UserCart({ match }) {
       },
     };
 
-    axios.get(`api/cart/${deleteAndUpdateCart.uid}/${deleteAndUpdateCart.id}`, config)
+    axios.get(`/api/cart/${deleteAndUpdateCart.uid}/${deleteAndUpdateCart.id}`, config)
       .then((res) => {
         if (res.data.success) {
           getCartData();
@@ -350,7 +350,7 @@ export default function UserCart({ match }) {
 
                     <StyledTableCell component="th" scope="row">
                       <div style={{ width: 50, height: 50 }}>
-                        <Image alt={item.itemName} src={`uploads/${item.itemImage}`}></Image>
+                        <Image alt={item.itemName} src={`/uploads/${item.itemImage}`}></Image>
                       </div>
                     </StyledTableCell>
                     <StyledTableCell style={{ color: "#000000", fontWeight: "bold", fontSize: "20px" }}>{item.itemName}</StyledTableCell>

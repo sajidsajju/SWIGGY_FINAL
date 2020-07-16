@@ -109,7 +109,7 @@ export default function DelDetails() {
     };
     const fetchData = async () => {
       await axios
-        .get("api/address/", config)
+        .get("/api/address/", config)
         .then((res) => {
           if (res.data.success) {
             setGetDetails(res.data.message);
@@ -118,7 +118,7 @@ export default function DelDetails() {
         .catch((err) => console.log(err));
 
       await axios
-        .get("api/image/", config)
+        .get("/api/image/", config)
         .then((res) => {
           if (res.data.success) {
             setImageDetails(res.data.message);
@@ -152,7 +152,7 @@ export default function DelDetails() {
       },
     };
     axios
-      .post("api/image/", formData, config)
+      .post("/api/image/", formData, config)
       .then((res) => {
         setDataError("");
         setErrorDisp("none");
@@ -203,7 +203,7 @@ export default function DelDetails() {
 
           axios
             .post(
-              "api/address/",
+              "/api/address/",
               formData,
               config
             )
@@ -292,7 +292,7 @@ export default function DelDetails() {
                     <br />
                     <br />
 
-                    <Avatar src={image ? image :  imageDetails ? `uploads/${imageDetails}` : ""} />
+                    <Avatar src={image ? image :  imageDetails ? `/uploads/${imageDetails}` : ""} />
                   </div>
 
                   <Grid
